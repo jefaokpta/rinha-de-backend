@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: r2dbc:mariadb://localhost:3306/rinha
+    username: rinha
+    password: rinha
+
+## ATENCAO DESATIVA LOG DE SQL
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG
