@@ -2,7 +2,7 @@ package com.example.rinhadebackend.model
 
 
 class PersonDTO(
-    val id: Int,
+    val id: String = java.util.UUID.randomUUID().toString(),
     val nome: String,
     val apelido: String,
     val nascimento: String,

@@ -15,11 +15,10 @@ import java.util.Optional
 class PersonCache {
 
     @CachePut("persons", key = "#person.nome")
-    fun cachePerson(person: Person): Person = person.apply { println("Caching person $nome") }
+    fun cachePerson(person: Person): Person = person
 
     @Cacheable("persons", key = "#nome")
     fun findByName(nome: String) = Optional.empty<Person>()
-        .apply { println("Searching person $nome") }
 
     @CacheEvict("persons", key = "#nome")
     fun deleteByName(nome: String) = println("Deleting person $nome")
